@@ -1,5 +1,9 @@
 package com.infoservice.schemeService.schemeEntities;
 
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,8 +38,9 @@ public class SchemeDetails {
     @Column(name = "target-audience")
     String targetAudience;
 
-    @Column(name = "launch-date")
-    String launchDate;
+    // @Column(name = "launch-date")    
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    LocalDate launchDate;
 
     @Column(name = "is-published")
     Boolean isPublished;
